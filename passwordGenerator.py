@@ -1,31 +1,32 @@
 import itertools
+import argparse
 
-possibleCombo = input("How Many Password Combination You Want to Create? Exp(3): ")
+parser = argparse.ArgumentParser()
+parser.add_argument('-p',action='store',dest='possibleCombo',help="Possible combination",type=str,default=3)
+parser.add_argument('-c',action='store',dest='combinationType',help="Combination type",type=str)
 
-combinationType = input("1) Combination Alphanumeric \n"
-"2) Combination Numeric only \n"
-"3) Combination Carecter only \n"
-"4) Combination special Carecter only \n"
-"5) Combination special Carecter & number only \n"
-"6) Combination Alphanumeric Special Characters \n"
-"==>  "
-)
+
+
 
 special = '!"#$%&\'()*+,-. /:;?@[]^_`{|}~'
 numeric = '0123456789'
 carecter = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-if combinationType == '1':
+password = parser.parse_args()
+
+possibleCombo = password.possibleCombo
+
+if password.combinationType == '1':
     getCarecter = numeric + carecter
-elif combinationType == '2':
+elif password.combinationType == '2':
     getCarecter = numeric
-elif combinationType == '3':
+elif password.combinationType == '3':
     getCarecter = carecter
-elif combinationType == '4':
+elif password.combinationType == '4':
     getCarecter = special
-elif combinationType == '5':
+elif password.combinationType == '5':
     getCarecter = special + numeric
-elif combinationType == '6':
+elif password.combinationType == '6':
     getCarecter = special + numeric + carecter
 else:
     exit("Bad Input")
