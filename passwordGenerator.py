@@ -1,3 +1,12 @@
+######################################################################################################
+# Title: Password Generator For Brute Force Attack                                                   #
+# Author: Tanvir Hossain Antu                                                                        #
+# Github : https://github.com/Antu7      
+# If you use the code give me the credit please                                                      #
+######################################################################################################
+
+
+
 import itertools
 
 class PasswordGenerator:
